@@ -436,12 +436,11 @@
                       </Border>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="10">
+                      <Table columnCount="4" rowCount="10">
                         <Column editable="false" title="Product Code" type="java.lang.Object"/>
                         <Column editable="false" title="Product Name" type="java.lang.Object"/>
                         <Column editable="false" title="Quantity" type="java.lang.Object"/>
                         <Column editable="false" title="Price" type="java.lang.Object"/>
-                        <Column editable="false" title="If Expired" type="java.lang.Integer"/>
                       </Table>
                     </Property>
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -458,7 +457,7 @@
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Cash"/>
+                <Property name="text" type="java.lang.String" value="Cash (Rs.)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTotal">
@@ -518,7 +517,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnBalance">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Balance"/>
+                <Property name="text" type="java.lang.String" value="Balance (Rs.)"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBalanceActionPerformed"/>
@@ -529,7 +528,7 @@
             <Component class="javax.swing.JLabel" name="total">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Total"/>
+                <Property name="text" type="java.lang.String" value="Total (Rs.)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel9">
@@ -659,12 +658,13 @@
                       </Border>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="30">
+                      <Table columnCount="6" rowCount="30">
                         <Column editable="true" title="Product Code" type="java.lang.Object"/>
                         <Column editable="true" title="Name" type="java.lang.Object"/>
                         <Column editable="true" title="Price" type="java.lang.Object"/>
                         <Column editable="true" title="Expiry Date" type="java.lang.Object"/>
                         <Column editable="true" title="Current Quantity" type="java.lang.Object"/>
+                        <Column editable="true" title="If Expired" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">

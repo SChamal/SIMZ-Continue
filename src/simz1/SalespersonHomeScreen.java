@@ -149,7 +149,7 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
                             vpSP.setVisible(true);
                             vpSP.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
                             return;
-                        }else if(str.equals(tx.getText())){
+                        } else if (str.equals(tx.getText())) {
                             ViewProductForSP vpSP = new ViewProductForSP(str);
                             vpSP.setVisible(true);
                             vpSP.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -190,13 +190,12 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
         this.clocker();
         int max = dbOps.getMaxBillID();
         this.billno.setText(max + 1 + "");
-        try{
+        try {
             setStock();
-        }catch(Exception e){
-        
+        } catch (Exception e) {
+
         }
-        
-        
+
         SalesPStock.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table,
@@ -204,14 +203,14 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
 
                 super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, col);
 
-                int tmpEx = Integer.parseInt(table.getModel().getValueAt(row, 4).toString());
+                int tmpEx = Integer.parseInt(table.getModel().getValueAt(row, 5).toString());
                 if (tmpEx == 1) {
                     setBackground(Color.RED);
                 } else {
                     setBackground(table.getBackground());
                     setForeground(table.getForeground());
-                }   
-                
+                }
+
                 return this;
             }
 
@@ -429,31 +428,24 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
         BillingTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         BillingTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Product Code", "Product Name", "Quantity", "Price", "If Expired"
+                "Product Code", "Product Name", "Quantity", "Price"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class
-            };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -464,7 +456,7 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
         jScrollPane4.setViewportView(BillingTable);
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Cash");
+        jLabel7.setText("Cash (Rs.)");
 
         txtTotal.setEditable(false);
         txtTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -510,7 +502,7 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText(" Quantity");
 
-        btnBalance.setText("Balance");
+        btnBalance.setText("Balance (Rs.)");
         btnBalance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBalanceActionPerformed(evt);
@@ -518,7 +510,7 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
         });
 
         total.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        total.setText("Total");
+        total.setText("Total (Rs.)");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -639,39 +631,39 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
         SalesPStock.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         SalesPStock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Product Code", "Name", "Price", "Expiry Date", "Current Quantity"
+                "Product Code", "Name", "Price", "Expiry Date", "Current Quantity", "If Expired"
             }
         ));
         SalesPStock.setGridColor(new java.awt.Color(51, 51, 51));
@@ -805,31 +797,29 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
                 int result = JOptionPane.showConfirmDialog(null, "Your balance is Rs " + String.valueOf(balance) + " Print the bill? ", null, JOptionPane.YES_NO_OPTION);
                 if (result == JOptionPane.YES_OPTION) {
                     String input = JOptionPane.showInputDialog(null, "Don't have change? enter balance you pay  or just enter", "0");
-                    try{
-                        
+                    try {
+
                         if (input == null) {
                             amounti = amounti;
-                            
+
                         } else if (Integer.parseInt(input) == 0) {
                             amounti = amounti;
                         } else if (Integer.parseInt(input) > 0) {
                             int actualBalance = Integer.parseInt(input);
                             amounti = paymenti - actualBalance;
                         }
-                    }catch(NumberFormatException e){
-                    
+                    } catch (NumberFormatException e) {
+
                     }
                     dbOps.addTransaction(timeLabel.getText(), today);
                     int billNo = dbOps.getBillID(timeLabel.getText(), today);
 
-                    
                     //add data of the transaction to the income and expenditure table in database and the interface
                     mhp.tblIncome.setModel(mhp.incomeModel);
-                    String descript = "bill "+ Integer.toString(billNo); 
+                    String descript = "bill " + Integer.toString(billNo);
                     int userID = dbOps.getID(name1.getText());
-                    mhp.incomeModel.addRow(new Object[]{ descript,amounti , null});
-                    dbOps.addToIncomeAndExpenditure(userID,descript,amounti,0);
-                    
+                    mhp.incomeModel.addRow(new Object[]{descript, amounti, null});
+                    dbOps.addToIncomeAndExpenditure(userID, descript, amounti, 0);
 
                     DefaultTableModel model = (DefaultTableModel) spi.SalesPStock.getModel();
                     DefaultTableModel model2 = (DefaultTableModel) mhp.tblOrder.getModel();
@@ -856,14 +846,23 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
                                     flag = true;
                                     break;
                                 }
-                                int id2 = 0;
+
+                                int id2 = 0, id3 = 0;
                                 try {
                                     id2 = (int) model2.getValueAt(k, 2);
+                                    id3 = (int) model2.getValueAt(k, 7);
                                 } catch (NullPointerException ex) {
 
                                 }
 
-                                if (id == id2) {
+                                if ((id == id2) && (model2.getValueAt(k, 7) == null)) {
+                                    orderRowNo = 0;
+                                    flag = true;
+                                    model2.setValueAt(1, k, 7);
+                                    break;
+                                }
+
+                                if ((id == id2) && (id3 == 1)) {
                                     flag = false;
                                     break;
                                 }
@@ -871,10 +870,17 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
                             if (flag == true) {
                                 NotificationPopup nw2 = new NotificationPopup();
                                 nw2.main1("Quantity limit reached for " + prdctName);
-                                nw2.b2.setVisible(false);
-                                //model2.addRow(new Object[]{false, 01, id, prdctName, today, timeLabel.getText(), 0, 0});
-                                model2.insertRow(orderRowNo, new Object[]{false, 01, id, prdctName, today, timeLabel.getText(), 0, 0});
-                                orderRowNo++;
+                                boolean checkOrder = true;
+                                for (int k = 0; k < model2.getRowCount(); k++) {
+                                    if (model2.getValueAt(k, 2).equals(id)) {
+                                        checkOrder = false;
+                                    }
+                                }
+                                if (checkOrder == true) {
+                                    int max = dbOps.getMaxOrderID();
+                                    model2.insertRow(orderRowNo, new Object[]{true, max + 1, id, prdctName, today, timeLabel.getText(), 0, 1, 0});
+                                    orderRowNo++;
+                                }
                             }
                         }
 
@@ -1166,31 +1172,31 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
                 return;
             }
             int balance = paymenti - amounti;
-                txtBalance.setText(String.valueOf(balance));
-                int result = JOptionPane.showConfirmDialog(null, "Your balance is Rs " + String.valueOf(balance) + " Print the bill? ", null, JOptionPane.YES_NO_OPTION);
-                if (result == JOptionPane.YES_OPTION) {
-                    String input = JOptionPane.showInputDialog(null, "Don't have change? enter balance you pay  or just enter", "0");
-                    try{
-                        if (input == null) {
-                            amounti = amounti;
-                        } else if (Integer.parseInt(input) == 0) {
-                            amounti = amounti;
-                        } else if (Integer.parseInt(input) > 0) {
-                            int actualBalance = Integer.parseInt(input);
-                            amounti = paymenti - actualBalance;
-                        }
-                    }catch(NumberFormatException e){
-                    
+            txtBalance.setText(String.valueOf(balance));
+            int result = JOptionPane.showConfirmDialog(null, "Your balance is Rs " + String.valueOf(balance) + " Print the bill? ", null, JOptionPane.YES_NO_OPTION);
+            if (result == JOptionPane.YES_OPTION) {
+                String input = JOptionPane.showInputDialog(null, "Don't have change? enter balance you pay  or just enter", "0");
+                try {
+                    if (input == null) {
+                        amounti = amounti;
+                    } else if (Integer.parseInt(input) == 0) {
+                        amounti = amounti;
+                    } else if (Integer.parseInt(input) > 0) {
+                        int actualBalance = Integer.parseInt(input);
+                        amounti = paymenti - actualBalance;
                     }
-                    dbOps.addTransaction(timeLabel.getText(), today);
-                    int billNo = dbOps.getBillID(timeLabel.getText(), today);
-                
+                } catch (NumberFormatException e) {
+
+                }
+                dbOps.addTransaction(timeLabel.getText(), today);
+                int billNo = dbOps.getBillID(timeLabel.getText(), today);
+
                 //add data of the transaction to the income and expenditure table in database and the interface
                 mhp.tblIncome.setModel(mhp.incomeModel);
-                String descript = "bill "+ Integer.toString(billNo); 
+                String descript = "bill " + Integer.toString(billNo);
                 int userID = dbOps.getID(name1.getText());
-                mhp.incomeModel.addRow(new Object[]{ descript,amounti , null});
-                dbOps.addToIncomeAndExpenditure(userID,descript,amounti,0);
+                mhp.incomeModel.addRow(new Object[]{descript, amounti, null});
+                dbOps.addToIncomeAndExpenditure(userID, descript, amounti, 0);
 
                 DefaultTableModel model = (DefaultTableModel) spi.SalesPStock.getModel();
                 DefaultTableModel model2 = (DefaultTableModel) mhp.tblOrder.getModel();
@@ -1211,21 +1217,29 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
                     boolean flag = true;
 
                     if (rslt == 11) {
-
                         for (int k = 0; k < model2.getRowCount(); k++) {
                             if (model2.getValueAt(k, 2) == null) {
                                 orderRowNo = 0;
                                 flag = true;
                                 break;
                             }
-                            int id2 = 0;
+
+                            int id2 = 0, id3 = 0;
                             try {
                                 id2 = (int) model2.getValueAt(k, 2);
+                                id3 = (int) model2.getValueAt(k, 7);
                             } catch (NullPointerException ex) {
 
                             }
 
-                            if (id == id2) {
+                            if ((id == id2) && (model2.getValueAt(k, 7) == null)) {
+                                orderRowNo = 0;
+                                flag = true;
+                                model2.setValueAt(1, k, 7);
+                                break;
+                            }
+
+                            if ((id == id2) && (id3 == 1)) {
                                 flag = false;
                                 break;
                             }
@@ -1233,10 +1247,17 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
                         if (flag == true) {
                             NotificationPopup nw2 = new NotificationPopup();
                             nw2.main1("Quantity limit reached for " + prdctName);
-                            nw2.b2.setVisible(false);
-                            //model2.addRow(new Object[]{false, 01, id, prdctName, today, timeLabel.getText(), 0, 0});
-                            model2.insertRow(orderRowNo, new Object[]{false, 01, id, prdctName, today, timeLabel.getText(), 0, 0});
-                            orderRowNo++;
+                            boolean checkOrder = true;
+                            for (int k = 0; k < model2.getRowCount(); k++) {
+                                if (model2.getValueAt(k, 2).equals(id)) {
+                                    checkOrder = false;
+                                }
+                            }
+                            if (checkOrder == true) {
+                                int max = dbOps.getMaxOrderID();
+                                model2.insertRow(orderRowNo, new Object[]{true, max + 1, id, prdctName, today, timeLabel.getText(), 0, 1, 0});
+                                orderRowNo++;
+                            }
                         }
                     }
 
@@ -1281,7 +1302,7 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBalanceActionPerformed
 
     private void ItemSelecterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ItemSelecterKeyPressed
-        
+
     }//GEN-LAST:event_ItemSelecterKeyPressed
 
     private void btnDeletePrdctActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeletePrdctActionPerformed
@@ -1296,19 +1317,20 @@ public class SalespersonHomeScreen extends javax.swing.JFrame {
         }
         ItemSelecter.requestFocusInWindow();
     }//GEN-LAST:event_btnDeletePrdctActionPerformed
-    
+
     private void setStock() {
         model1 = new MyTableModel();
         SalesPStock.setModel(model1);
         ResultSet rst = dbOps.getTodayStock();
-        try{
+        try {
             while (rst.next()) {
-                model.addRow(new Object[]{rst.getString(1), rst.getString(2), rst.getString(3), rst.getDate(4), rst.getString(5),0});
+                model.addRow(new Object[]{rst.getString(1), rst.getString(2), rst.getString(3), rst.getDate(4), rst.getString(5), 0});
             }
-        }catch(SQLException e){ 
-        
+        } catch (SQLException e) {
+
         }
     }
+
     /**
      * @param args the command line arguments
      */

@@ -153,7 +153,9 @@ public class LoginFrame1 extends javax.swing.JFrame {
             this.setVisible(false);
             spi.setVisible(true);
             spi.name3.setText(s1);
-
+            spi.SalesPStock.getColumnModel().getColumn(5).setMinWidth(0);
+            spi.SalesPStock.getColumnModel().getColumn(5).setMaxWidth(0);
+            
             String rst = dbOps.getPropic(s1);
 
             if (rst != null) {
@@ -166,6 +168,10 @@ public class LoginFrame1 extends javax.swing.JFrame {
             this.setVisible(false);
             mhp.setVisible(true);
             mhp.name1.setText(s1);
+            mhp.tableProduct.getColumnModel().getColumn(7).setMinWidth(0);
+            mhp.tableProduct.getColumnModel().getColumn(7).setMaxWidth(0);
+            mhp.tblOrder.getColumnModel().getColumn(7).setMinWidth(0);
+            mhp.tblOrder.getColumnModel().getColumn(7).setMaxWidth(0);
 
             String rst = dbOps.getPropic(s1);
 
@@ -218,6 +224,8 @@ public class LoginFrame1 extends javax.swing.JFrame {
                 this.setVisible(false);
                 spi.setVisible(true);
                 spi.name3.setText(s1);
+                spi.SalesPStock.getColumnModel().getColumn(5).setMinWidth(0);
+                spi.SalesPStock.getColumnModel().getColumn(5).setMaxWidth(0);
 
                 String rst = dbOps.getPropic(s1);
 
@@ -231,6 +239,10 @@ public class LoginFrame1 extends javax.swing.JFrame {
                 this.setVisible(false);
                 mhp.setVisible(true);
                 mhp.name1.setText(s1);
+                mhp.tableProduct.getColumnModel().getColumn(7).setMinWidth(0);
+                mhp.tableProduct.getColumnModel().getColumn(7).setMaxWidth(0);
+                mhp.tblOrder.getColumnModel().getColumn(7).setMinWidth(0);
+                mhp.tblOrder.getColumnModel().getColumn(7).setMaxWidth(0);
 
                 String rst = dbOps.getPropic(s1);
 

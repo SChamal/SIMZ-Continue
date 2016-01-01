@@ -13,9 +13,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author CHAM PC
  */
-public class OrderTableModel extends DefaultTableModel {
-    public OrderTableModel() {
-      super(new String[]{" ", "Order No", "Product ID", "Product Name", "Date", "Time", "Order Quantity", "Alert"}, 0);
+public class viewOrderTableModel extends DefaultTableModel {
+    public viewOrderTableModel() {
+      super(new String[]{"Product ID", "Product Name","Ordered Quantity"}, 0);
     }
     
     @Override
@@ -23,7 +23,7 @@ public class OrderTableModel extends DefaultTableModel {
       Class clazz = String.class;
       switch (columnIndex) {
         case 0:
-          clazz = Boolean.class;
+          clazz = String.class;
           break;
       }
       return clazz;
@@ -31,19 +31,14 @@ public class OrderTableModel extends DefaultTableModel {
 
     @Override
     public boolean isCellEditable(int row, int column) {
-      return column == 0 || column ==6;
+      return false;
     }
 
     @Override
     public void setValueAt(Object aValue, int row, int column) {
-      if (aValue instanceof Boolean && column == 0) {
+      if(column == 1){
         Vector rowData = (Vector)getDataVector().get(row);
-        rowData.set(0, (boolean)aValue);
-        fireTableCellUpdated(row, column);
-      }
-      if(column == 6){
-        Vector rowData = (Vector)getDataVector().get(row);
-        rowData.set(6, aValue);
+        rowData.set(1, aValue);
         fireTableCellUpdated(row, column);
       }
     }
